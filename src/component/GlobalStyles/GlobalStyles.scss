@@ -19,9 +19,25 @@ html {
 body {
   font-family: 'roboto', sans-serif;
   font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  color: var(--text-color);
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+}
+
+a,
+[href] {
+  color: var(--text-color);
+  text-decoration: none;
 }
