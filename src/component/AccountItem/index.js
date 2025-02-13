@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 function AccountItem() {
   return (
-    <div className={cx('wrapper')}>
+    <div className={cx('wrapper-account')}>
       <img
         className={cx('avatar')}
         src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/04c26c73206e8997c961c50194ee9ae5~tplv-tiktokx-cropcenter:300:300.webp?dr=14577&nonce=286&refresh_token=304ce8f00b41e5ee675a2bf5fd53c346&x-expires=1739606400&x-signature=gnXD93LX1FuUSmAYqTh877Nhm0I%3D&idc=my&ps=13740610&shcp=c1333099&shp=a5d48078&t=4d5b0474"
