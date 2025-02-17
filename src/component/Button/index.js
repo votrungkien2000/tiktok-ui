@@ -20,6 +20,7 @@ function Button({
   ...passProps
 }) {
   const cx = classNames.bind(styles);
+  let Component = 'button';
 
   const props = {
     onClick,
@@ -27,7 +28,7 @@ function Button({
   };
   if (to) {
     props.to = to;
-    Component = 'Link';
+    Component = Link;
   } else if (href) {
     props.href = href;
     Component = 'a';
@@ -41,7 +42,6 @@ function Button({
       }
     });
   }
-  let Component = 'button';
   const classes = cx('wrapper', {
     [className]: className,
     text,

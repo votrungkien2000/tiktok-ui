@@ -27,10 +27,26 @@ function Header() {
     {
       icon: <FontAwesomeIcon icon={faEarthAsia} />,
       title: 'English',
+      children: {
+        title: 'language',
+        data: [
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+        ],
+      },
     },
     {
       icon: <FontAwesomeIcon icon={faCircleQuestion} />,
       title: 'Feedback and help',
+      to: 'http://localhost:3000/feedback',
     },
     {
       icon: <FontAwesomeIcon icon={faKeyboard} />,
@@ -43,6 +59,17 @@ function Header() {
       setSearchResult([]);
     }, 0);
   }, []);
+
+  //handle Logic
+  const handleMenuChange = (nemuItem) => {
+    console.log(nemuItem);
+
+    switch (nemuItem.type) {
+      case 'language':
+        break;
+      default:
+    }
+  };
 
   return (
     <header className={cx('wrapper')}>
@@ -83,7 +110,7 @@ function Header() {
           <Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
             Log in
           </Button>
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
             <button className={cx('more-btn')}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>
