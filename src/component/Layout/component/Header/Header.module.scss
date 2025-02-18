@@ -102,11 +102,19 @@
 }
 .action {
   display: inline-flex;
+  align-items: center;
 }
 .more-btn {
   font-size: 2rem;
   margin-left: 24px;
   background-color: transparent;
   padding: 4px 8px;
+  cursor: pointer;
+}
+.action-btn {
+  background: transparent;
+  font-size: 2.2rem;
+  color: #161823;
+  padding: 6px 12px;
   cursor: pointer;
 }
