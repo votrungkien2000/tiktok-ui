@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css?family-Roboto:wght@300;400;500;700;900&display=swap');
+// @import url('https://fonts.googleapis.com/css?family-Roboto:wght@300;400;500;600;700;900&display=swap');
 :root {
   --primary: #fe2c55;
   --black: #000;
@@ -17,7 +17,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'roboto', sans-serif;
+  font-family: 'TikTokFont', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -40,4 +40,41 @@ a,
 [href] {
   color: var(--text-color);
   text-decoration: none;
+}
+//fonts embeded
+@font-face {
+  font-family: TikTokFont;
+  src: url('/assets/fonts/TikTokFont-Regular.woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: TikTokFont;
+  src: url('/assets/fonts/TikTokDisplayFont-Semibold.woff2');
+  font-weight: 600;
+}
+@font-face {
+  font-family: TikTokFont;
+  src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: TikTokFont;
+  src: url('/assets/fonts/TikTokFont-Bold.woff2');
+  font-weight: 700;
+}
+
+body {
+  .tippy-box {
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    background-color: rgba(84, 84, 84, 0.92);
+  }
+  .tippy-content {
+    padding: 8px 9px;
+  }
+  .tippy-arrow {
+    color: rgba(84, 84, 84, 0.92);
+  }
 }

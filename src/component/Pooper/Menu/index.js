@@ -4,7 +4,7 @@ import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '@/component/Pooper';
 import MenuItem from './MenuItem';
 import Header from './Header';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
@@ -16,7 +16,6 @@ function Menu({ children, items = [], onChange = defaultFn }) {
   const renderItems = () => {
     return current.data.map((item, index) => {
       const isParent = !!item.children; //convert bool
-
       return (
         <MenuItem
           key={index}
@@ -37,6 +36,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     <div>
       <Tippy
         delay={[0, 700]}
+        offset={[12, 8]}
         interactive
         placement="bottom-end"
         render={(attrs) => (
@@ -46,7 +46,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                 <Header
                   title="language"
                   onBack={() => {
-                    setHistory((prev) => prev.slice(0, history.length - 1));
+                    setHistory((prev) => prev.slice(0, prev.length - 1));
                   }}
                 />
               )}

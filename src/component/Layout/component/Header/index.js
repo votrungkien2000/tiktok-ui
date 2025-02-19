@@ -6,28 +6,39 @@ import {
   faCircleQuestion,
   faCircleXmark,
   faCloudUpload,
+  faCoins,
   faEarthAsia,
   faEllipsisVertical,
+  faGear,
   faKeyboard,
   faMagnifyingGlass,
-  faMessage,
   faSignIn,
+  faSignOut,
   faSpinner,
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useState } from 'react';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional
+import 'tippy.js/dist/tippy.css';
 
 import { Wrapper as PopperWrapper } from '@/component/Pooper';
 import AccountItem from '@/component/AccountItem';
 import Button from '@/component/Button';
 import Menu from '@/component/Pooper/Menu';
+import { UploadIcon } from '@/component/Icon';
+import Image from '@/component/Image';
 
 function Header() {
   const cx = classNames.bind(styles);
   const [searchResult, setSearchResult] = useState([]);
   const currentUser = true;
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSearchResult([]);
+    }, 0);
+  }, []);
 
   const MENU_ITEMS = [
     {
@@ -60,16 +71,33 @@ function Header() {
     },
   ];
 
-  useEffect(() => {
-    setTimeout(() => {
-      setSearchResult([]);
-    }, 0);
-  }, []);
+  const userMenu = [
+    {
+      icon: <FontAwesomeIcon icon={faUser} />,
+      title: 'View profile',
+      to: '/@hoaa',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faCoins} />,
+      title: 'Get coins',
+      to: '/coins',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faGear} />,
+      title: 'Setting',
+      to: '/setting',
+    },
+    ...MENU_ITEMS,
+    {
+      icon: <FontAwesomeIcon icon={faSignOut} />,
+      title: 'Log out',
+      to: '/logout',
+      separate: true,
+    },
+  ];
 
   //handle Logic
   const handleMenuChange = (nemuItem) => {
-    console.log(nemuItem);
-
     switch (nemuItem.type) {
       case 'language':
         break;
@@ -115,9 +143,10 @@ function Header() {
         <div className={cx('action')}>
           {currentUser ? (
             <>
-              <Tippy content="Upload Video" placement="bottom">
+              <Tippy delay={[0, 200]} content="Upload Video" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon>
+                  {/* <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon> */}
+                  <UploadIcon></UploadIcon>
                 </button>
               </Tippy>
             </>
@@ -129,21 +158,17 @@ function Header() {
               </Button>
             </>
           )}
-          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
+          <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <>
-                <img
-                  src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/04c26c73206e8997c961c50194ee9ae5~tplv-tiktokx-cropcenter:300:300.webp?dr=14577&nonce=286&refresh_token=304ce8f00b41e5ee675a2bf5fd53c346&x-expires=1739606400&x-signature=gnXD93LX1FuUSmAYqTh877Nhm0I%3D&idc=my&ps=13740610&shcp=c1333099&shp=a5d48078&t=4d5b0474"
-                  alt="Nguyen Van A"
-                  className={cx('user-avatar')}
-                ></img>
-              </>
+              <Image
+                src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/04c26c73206e8997c961c50194ee9ae5~tplv-tiktokx-cropcenter:300:300.webp?dr=14577&nonce=286&refresh_token=304ce8f00b41e5ee675a2bf5fd53c346&x-expires=1739606400&x-signature=gnXD93LX1FuUSmAYqTh877Nhm0I%3D&idc=my&ps=13740610&shcp=c1333099&shp=a5d48078&t=4d5b0474"
+                alt="Nguyen Van A"
+                className={cx('user-avatar')}
+              ></Image>
             ) : (
-              <>
-                <button className={cx('more-btn')}>
-                  <FontAwesomeIcon icon={faEllipsisVertical} />
-                </button>
-              </>
+              <button className={cx('more-btn')}>
+                <FontAwesomeIcon icon={faEllipsisVertical} />
+              </button>
             )}
           </Menu>
         </div>
