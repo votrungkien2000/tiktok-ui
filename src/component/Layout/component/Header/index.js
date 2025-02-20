@@ -4,41 +4,27 @@ import images from '@/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleQuestion,
-  faCircleXmark,
-  faCloudUpload,
   faCoins,
   faEarthAsia,
   faEllipsisVertical,
   faGear,
   faKeyboard,
-  faMagnifyingGlass,
   faSignIn,
   faSignOut,
-  faSpinner,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import React, { useEffect, useState } from 'react';
-import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
-import { Wrapper as PopperWrapper } from '@/component/Pooper';
-import AccountItem from '@/component/AccountItem';
 import Button from '@/component/Button';
 import Menu from '@/component/Pooper/Menu';
-import { UploadIcon } from '@/component/Icon';
+import { UploadIcon, MessageIcon, InboxIcon } from '@/component/Icon';
 import Image from '@/component/Image';
+import Search from '../Search';
 
 function Header() {
   const cx = classNames.bind(styles);
-  const [searchResult, setSearchResult] = useState([]);
   const currentUser = true;
-
-  useEffect(() => {
-    setTimeout(() => {
-      setSearchResult([]);
-    }, 0);
-  }, []);
 
   const MENU_ITEMS = [
     {
@@ -113,40 +99,24 @@ function Header() {
           <img src={images.logo} alt="TikTok logo" />
         </div>
         {/*search*/}
-        <HeadlessTippy
-          interactive
-          visible={searchResult.length > 0}
-          render={(attrs) => (
-            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-              <PopperWrapper>
-                <h4 className={cx('search-title')}>Accounts</h4>
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
-              </PopperWrapper>
-            </div>
-          )}
-        >
-          <div className={cx('search')}>
-            <input type="text" placeholder="Search accounts and videos" spellCheck="false" />
-            <button className={cx('clear')}>
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </button>
-            <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-
-            <button className={cx('sreach-btn')}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
-          </div>
-        </HeadlessTippy>
+        <Search></Search>
 
         <div className={cx('action')}>
           {currentUser ? (
             <>
-              <Tippy delay={[0, 200]} content="Upload Video" placement="bottom">
+              <Tippy delay={[0, 100]} content="Upload Video" placement="bottom">
                 <button className={cx('action-btn')}>
-                  {/* <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon> */}
                   <UploadIcon></UploadIcon>
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 100]} content="Message" placement="bottom">
+                <button className={cx('action-btn')}>
+                  <MessageIcon></MessageIcon>
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 100]} content="Inbox" placement="bottom">
+                <button className={cx('action-btn')}>
+                  <InboxIcon></InboxIcon>
                 </button>
               </Tippy>
             </>

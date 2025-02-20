@@ -1,7 +1,5 @@
-function Frofile() {
-    return (
-        <h2>Frofile pages</h2>
-    );
+function Profile() {
+  return <h2>Frofile pages</h2>;
 }
 
-export default Frofile;
+export default Profile;
