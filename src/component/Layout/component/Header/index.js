@@ -1,6 +1,7 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '@/assets/images';
+import routesConfig from '@/config/routes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleQuestion,
@@ -13,6 +14,7 @@ import {
   faSignOut,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
@@ -33,6 +35,146 @@ function Header() {
       children: {
         title: 'language',
         data: [
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+          {
+            type: 'language',
+            code: 'en',
+            title: 'English',
+          },
+          {
+            type: 'language',
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
           {
             type: 'language',
             code: 'en',
@@ -96,7 +238,9 @@ function Header() {
       <div className={cx('inner')}>
         {/*logo*/}
         <div className={cx('logo')}>
-          <img src={images.logo} alt="TikTok logo" />
+          <Link to={routesConfig.home} className={cx('logo-link')}>
+            <img src={images.logo} alt="TikTok logo" />
+          </Link>
         </div>
         {/*search*/}
         <Search></Search>
