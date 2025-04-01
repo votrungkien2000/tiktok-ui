@@ -16,12 +16,13 @@
   input {
     flex: 1;
     height: 100%;
+    padding: 12px 0;
+    padding-right: 40px;
     color: var(--black);
     font-size: 1.6rem;
     border: none;
     outline: none;
     background-color: transparent;
-    padding: 12px 0;
     caret-color: var(--primary);
   }
 
