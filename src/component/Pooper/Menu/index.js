@@ -4,7 +4,7 @@ import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '@/component/Pooper';
 import MenuItem from './MenuItem';
 import Header from './Header';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 const defaultFn = () => {};

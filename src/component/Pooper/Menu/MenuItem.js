@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import Button from '@/component/Button';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 const cx = classNames.bind(styles);
 

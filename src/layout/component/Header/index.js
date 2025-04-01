@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '@/assets/images';
-import routesConfig from '@/config/routes';
+import config from '@/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleQuestion,
@@ -35,146 +35,6 @@ function Header() {
       children: {
         title: 'language',
         data: [
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-          {
-            type: 'language',
-            code: 'vi',
-            title: 'Tiếng Việt',
-          },
           {
             type: 'language',
             code: 'en',
@@ -238,7 +98,7 @@ function Header() {
       <div className={cx('inner')}>
         {/*logo*/}
         <div className={cx('logo')}>
-          <Link to={routesConfig.home} className={cx('logo-link')}>
+          <Link to={config.routes.home} className={cx('logo-link')}>
             <img src={images.logo} alt="TikTok logo" />
           </Link>
         </div>
